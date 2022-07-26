@@ -17,6 +17,7 @@ jobs:
                 name: Change into project-ml-microservice-kubernetes
                 command: |
                     cd project-ml-microservice-kubernetes
+                    ls
                     
             # Download and cache dependencies
             - restore_cache:
