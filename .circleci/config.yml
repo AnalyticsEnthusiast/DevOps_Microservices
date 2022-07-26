@@ -13,11 +13,15 @@ jobs:
 
         steps:
             - checkout
-
+            - run:
+                name: Change into project-ml-microservice-kubernetes
+                command: |
+                    cd project-ml-microservice-kubernetes
+                    
             # Download and cache dependencies
             - restore_cache:
                 keys:
-                    - v1-dependencies-{{ checksum "project-ml-microservice-kubernetes/requirements.txt" }}
+                    - v1-dependencies-{{ checksum "requirements.txt" }}
                     # fallback to using the latest cache if no exact match is found
                     - v1-dependencies-
 
@@ -33,7 +37,7 @@ jobs:
             - save_cache:
                 paths:
                     - ./venv
-                key: v1-dependencies-{{ checksum "project-ml-microservice-kubernetes/requirements.txt" }}
+                key: v1-dependencies-{{ checksum "requirements.txt" }}
 
             # run lint!
             - run:
