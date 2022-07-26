@@ -10,4 +10,4 @@ docker build -t house-prediction-ml .
 docker image ls
 # Step 3: 
 # Run flask app
-docker run -d --rm -p 8000:80 --name house-pred-1 house-prediction-ml
+docker run -d --rm -p 8001:80 --name house-pred-1 house-prediction-ml
